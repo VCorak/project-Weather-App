@@ -1,0 +1,102 @@
+.card {
+  max-width: 30rem;
+  height: responsive;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+h1 {
+  color: rgb(170, 170, 204);
+  font-size: 35px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+h2 {
+  position: relative;
+  bottom: 15px;
+}
+h2 i {
+  position: relative;
+  bottom: 10px;
+  left: 10px;
+  color: yellow;
+  font-size: 40px;
+}
+.container {
+  position: relative;
+  left: 20px;
+  top: 20px;
+  bottom: 30px;
+}
+.search-form {
+  margin-left: 25px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+button.update {
+  color: gray;
+  position: relative;
+  left: 190px;
+  bottom: 40px;
+  font-size: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+}
+button.update:hover {
+  background: rgb(230, 223, 223);
+}
+.current-indicators {
+  color: gray;
+  position: relative;
+  bottom: 20px;
+}
+
+.current-day-hour,
+.feeling {
+  position: relative;
+  left: 20px;
+}
+
+.humidity,
+.wind {
+  position: relative;
+  left: 275px;
+  bottom: 50px;
+}
+
+.current-temperature {
+  position: relative;
+  bottom: 70px;
+  left: 60px;
+  color: gray;
+  font-size: 55px;
+}
+.temperature-symbols {
+  position: relative;
+  bottom: 130px;
+  left: 120px;
+  font-size: 17px;
+  color: gray;
+}
+
+.weekly-weather-report {
+  position: relative;
+  bottom: 70px;
+  width: max-width;
+  font-size: 15px;
+}
+.daysoftheweek,
+.daily-temperatures {
+  color: gray;
+}
+
+.fa-sun {
+  color: yellow;
+}
