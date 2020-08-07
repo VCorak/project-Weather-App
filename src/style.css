@@ -38,16 +38,15 @@ h2 i {
 }
 
 button.update {
-  color: gray;
+  color: #0069d9;
   position: relative;
   left: 190px;
   bottom: 40px;
-  font-size: 15px;
+  font-size: 20px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   border-radius: 50px;
-  border: none;
   outline: none;
 }
 button.update:hover {
