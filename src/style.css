@@ -6,6 +6,7 @@
 .card {
   max-width: 30rem;
   height: responsive;
+  max-width: responsive;
   margin: 0 auto;
   margin-top: 30px;
   background-color: whitesmoke;
