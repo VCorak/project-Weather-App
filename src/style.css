@@ -1,3 +1,7 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
   color: rgb(170, 170, 204);
   font-size: 35px;
@@ -99,4 +103,14 @@ button.update:hover {
 
 .fa-sun {
   color: yellow;
+}
+
+footer {
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  display: block;
+  margin: 25px 420px;
 }
