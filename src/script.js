@@ -30,6 +30,7 @@ dateElement.innerHTML = newDate(currentTime);
 // 2
 
 function showCityWeather(response) {
+  console.log(response.data);
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
   let temperature = document.querySelector("#main-temperature");
@@ -40,6 +41,10 @@ function showCityWeather(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
   let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
+  let weatherIconElement = document.querySelector("#weather-icon");
+  weatherIconElement.setAttribute =
+    ("src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}2x.png`);
 }
 
 function search(event) {
@@ -59,7 +64,7 @@ function enterCity(city) {
   axios.get(apiUrl).then(showCityWeather);
 }
 
-//button
+//update button
 function instantLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
