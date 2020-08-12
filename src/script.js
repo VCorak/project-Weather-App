@@ -30,7 +30,7 @@ dateElement.innerHTML = newDate(currentTime);
 // 2
 
 function showCityWeather(response) {
-  console.log(response.data);
+  console.log(response);
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
   let temperature = document.querySelector("#main-temperature");
