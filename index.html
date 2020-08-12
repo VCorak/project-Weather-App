@@ -1,116 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Today</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/99ce12054c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weather Today</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-  <script src="https://kit.fontawesome.com/99ce12054c.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="src/style.css" />
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-</head>
-
-<body>
-  <div class="card">
+  <body>
     <div class="container">
+      <div class="content-wrapper">
+        <div class="current-weather-report">
+          <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-7">
+                <input
+                  type="search"
+                  placeholder="Enter a city"
+                  autocomplete="off"
+                  autofocus="on"
+                  id="enter-city"
+                  class="form-control shadow sm"
+                />
+              </div>
 
-      <form class="search-form" id="search-form">
-        <div class="row">
-          <div class="col-7">
-            <input type="text" placeholder="Enter a city" autocomplete="off" autofocus="on" id="enter-city"
-              class="form-control shadow sm" />
-          </div>
-
-          <div class="col-3">
-            <input type="submit" value="Search" class="form-control btn btn-primary shadow sm" />
-
-          </div>
-        </div>
-      </form>
-
-
-
-
-      <div class="current-weather-report">
-        <h1>
-          <div class="City" id="city">
-            Antwerp
-          </div>
-
-        </h1>
-        <button class="update" id=update-emoji>↺</button>
-
-        <div class="current-indicators">
-          <div class="current-day-hour" id="date"></div>
-          <div class="feeling" id="description">Sunny</div>
-          <div class="humidity" id="humidity">Humidity: %</div>
-          <div class="wind" id="wind">Wind: km/h</div>
-        </div>
-
-        <h2>
-          <i class="fas fa-sun" id=main-temp-icon> </i>
-          <div class="current-temperature" id="main-temperature">18</div>
-          <small>
-
-            <div class="temperature-symbols">
-              <a href="#" id="celsius">°C</a> |
-              <a href="#" id="fahrenheit">°F</a>
-
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="form-control btn btn-primary shadow sm"
+                />
+              </div>
+              <button class="btn btn-primary shadow sm" id="update-button">
+                ↺
+              </button>
             </div>
-          </small>
+          </form>
+
+          <div class="current-indicators">
+            <h1 id="city">
+              Antwerp
+            </h1>
+
+            <ul>
+              <li><span id="date"></span></li>
+              <li id="description">Sunny</li>
+            </ul>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix-weather-temperature">
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt="Clear"
+                  id="weather-icon"
+                  class="float-left"
+                />
+
+                <div class="float-left">
+                  <strong id="main-temperature">12</strong>
+                  <span class="symbols">
+                    <a href="#" id="celsius" class="active">°C</a> |
+                    <a href="#" id="fahrenheit">°F</a></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li><span id="humidity"> Humidity: 20%</span></li>
+                <li><span id="wind"> Wind: 20 km/h</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="weekly-weather-report" id="weekly-report"></div>
+        </div>
+        <small>
+          <a
+            href="https://github.com/VCorak/project-Weather-App"
+            target="_blank"
+          >
+            Open-source code</a
+          >, by Valentina Corak
+        </small>
       </div>
-      </h2>
-
-      <div class="weekly-weather-report">
-        <div class="daysoftheweek">
-          <div class="row">
-            <div class="col">Sun</div>
-            <div class="col">Mon</div>
-            <div class="col">Tue</div>
-            <div class="col">Wed</div>
-            <div class="col">Thu</div>
-            <div class="col">Fri</div>
-          </div>
-        </div>
-
-        <div class="weather-icons">
-          <div class="row">
-            <div class="col">🌥</div>
-            <div class="col"><i class="fas fa-sun"></i></div>
-            <div class="col"><i class="fas fa-sun"></i></div>
-            <div class="col">🌧</div>
-            <div class="col"><i class="fas fa-sun"></i></div>
-            <div class="col"><i class="fas fa-sun"></i></div>
-          </div>
-        </div>
-
-        <div class="daily-temperatures">
-          <div class="row">
-            <div class="col">23°</div>
-            <div class="col">25°</div>
-            <div class="col">25°</div>
-            <div class="col">26°</div>
-            <div class="col">26°</div>
-            <div class="col">26°</div>
-          </div>
-        </div>
-      </div>
-    
-    
-    </div>
-    
     </div>
 
-  <footer>
-    <a href="https://github.com/VCorak/project-Weather-App" target="_blank"> Open-source code</a>, by Valentina Corak
-  </footer>
-
-  <script src="src/script.js"></script>
-
-  
-</body>
-
+    <script src="src/script.js"></script>
+  </body>
 </html>

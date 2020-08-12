@@ -1,116 +1,110 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, sans-serif;
 }
 
 h1 {
-  color: rgb(170, 170, 204);
-  font-size: 35px;
-  margin-left: 20px;
-  margin-top: 30px;
-}
-h2 {
-  position: relative;
-  bottom: 15px;
-}
-h2 i {
-  position: relative;
-  bottom: 10px;
-  left: 10px;
-  color: yellow;
-  font-size: 40px;
+  color: #878787;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 28px;
+  margin-bottom: 0;
 }
 
-.card {
-  min-width: 540px;
-  max-width: 700px;
-  margin: 0 auto;
-  margin-top: 30px;
-  background-color: whitesmoke;
-  border-radius: 10px;
+ul {
+  margin: 0;
+  padding: 0;
 }
-.container {
-  margin-top: 30px;
-  margin-left: 30px;
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  color: rgb(135, 135, 135);
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
 }
-.search-form {
-  margin-left: 25px;
-  margin-bottom: 5px;
-  margin-top: 15px;
+
+li:first-letter {
+  text-transform: capitalize;
 }
+
+.content-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
 .current-weather-report {
-  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
 }
 
-button.update {
-  color: #0069d9;
-  position: relative;
-  left: 190px;
-  bottom: 40px;
-  font-size: 20px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  border-radius: 50px;
-  outline: none;
-}
-button.update:hover {
-  background: rgb(230, 223, 223);
-}
 .current-indicators {
-  color: gray;
-  position: relative;
-  bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-.current-day-hour,
-.feeling {
-  position: relative;
-  left: 20px;
+.clearfix-weather-temperature img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
 }
 
-.humidity,
-.wind {
-  position: relative;
-  left: 275px;
-  bottom: 50px;
-}
-
-.current-temperature {
-  position: relative;
-  bottom: 70px;
-  left: 60px;
-  color: gray;
-  font-size: 55px;
-}
-.temperature-symbols {
-  position: relative;
-  bottom: 130px;
-  left: 120px;
-  font-size: 17px;
-  color: gray;
-}
-
-.weekly-weather-report {
-  position: relative;
-  bottom: 70px;
-  width: max-width;
-  font-size: 15px;
-}
-.daysoftheweek,
-.daily-temperatures {
-  color: gray;
-}
-
-.fa-sun {
-  color: yellow;
-}
-
-footer {
-  font-size: 15px;
-  cursor: pointer;
+.clearfix-weather-temperature strong {
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  line-height: 1;
   font-weight: 400;
-  line-height: 1.5;
-  text-align: left;
+}
+
+.clearfix-weather-temperature .symbols {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
+
+.active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+.weekly-report {
+  margin-top: 10px;
+}
+
+.weekly-report h3 {
+  color: rgb(186, 186, 186);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  height: 15px;
+  line-height: 15px;
+  padding-top: 7px;
+}
+
+.weekly-report img {
   display: block;
-  margin: 25px 420px;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
+}
+
+.weekly-report-temperature {
+  text-align: center;
+  color: rgb(135, 135, 135);
+  font-size: 13px;
+  font-weight: 400;
+  height: auto;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.update-button {
+  border-radius: 50%;
 }
