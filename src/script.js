@@ -30,7 +30,6 @@ dateElement.innerHTML = newDate(currentTime);
 // 2
 
 function showCityWeather(response) {
-  console.log(response.data);
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
   let temperature = document.querySelector("#main-temperature");
@@ -62,7 +61,6 @@ function enterCity(city) {
 
 //button
 function instantLocation(position) {
-  console.log(position);
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "601136d971259a1891bcbb5957edf0ed";
@@ -74,7 +72,7 @@ function instantLocation(position) {
 function getCurrentLocation() {
   navigator.geolocation.getCurrentPosition(instantLocation);
 }
-let button = document.querySelector("#update-emoji");
+let button = document.querySelector("#update-button");
 button.addEventListener("click", getCurrentLocation);
 
 //celsius to fahrenheit
