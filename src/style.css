@@ -74,11 +74,11 @@ li:first-letter {
   text-decoration: none;
 }
 
-.row-hourly-forecast {
+.hourly-forecast {
   margin-top: 10px;
 }
 
-.row-hourly-forecast h3 {
+.hourly-forecast h3 {
   color: rgb(186, 186, 186);
   font-size: 14px;
   font-weight: 400;
@@ -88,14 +88,14 @@ li:first-letter {
   padding-top: 7px;
 }
 
-.row-hourly-forecast img {
+.hourly-forecast img {
   display: block;
   margin: 0 auto;
   height: 48px;
   width: 48px;
 }
 
-.hourly-forecast-temperature {
+.forecast-temperature {
   text-align: center;
   color: rgb(135, 135, 135);
   font-size: 13px;
