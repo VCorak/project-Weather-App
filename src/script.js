@@ -30,7 +30,6 @@ dateElement.innerHTML = newDate(currentTime);
 // show current weather
 
 function showCityWeather(response) {
-  console.log(response.data.weather[0].icon);
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
   let temperature = document.querySelector("#main-temperature");
@@ -87,7 +86,6 @@ button.addEventListener("click", getCurrentLocation);
 
 //celsius to fahrenheit
 
-
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#main-temperature");
@@ -110,4 +108,47 @@ let celsiusTemperature = null;
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
 
-// weekly weather forecast
+//  Daily, every three hours forecast
+
+function displayHourForecast(response) {
+  let forecastElement = document.querySelector("#forecast-report");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    let forecast = response.data.list[index];
+    forecastElement.innerHTML += `<div class="col-2">
+              <h3>
+                ${formatHours(forecast.dt * 1000)};
+              </h3>
+              <img
+                src="http://openweathermap.org/img/wn/${
+                  forecast.weather[0].icon
+                }@2x.png"
+                alt=""
+              />
+              <div class="hourly-forecast-temperature">
+                <strong>${Math.round(
+                  forecast.main.temp.max
+                )}°</strong>${Math.round(forecast.main.temp.min)}°
+              </div>
+        </div>`;
+  }
+}
+apiKey = "21d207d4e5449385a0586090096515c7";
+apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayHourForecast);
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let currentHour = date.getHours();
+  if (currentHour < 10) {
+    currentHour = `0${currentHour}`;
+  }
+  let currentMinutes = date.getMinutes();
+  if (currentMinutes < 10) {
+    currentMinutes = `0${currentMinutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}

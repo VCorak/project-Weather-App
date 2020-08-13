@@ -74,11 +74,11 @@ li:first-letter {
   text-decoration: none;
 }
 
-.weekly-report {
+.row-hourly-forecast {
   margin-top: 10px;
 }
 
-.weekly-report h3 {
+.row-hourly-forecast h3 {
   color: rgb(186, 186, 186);
   font-size: 14px;
   font-weight: 400;
@@ -88,14 +88,14 @@ li:first-letter {
   padding-top: 7px;
 }
 
-.weekly-report img {
+.row-hourly-forecast img {
   display: block;
   margin: 0 auto;
   height: 48px;
   width: 48px;
 }
 
-.weekly-report-temperature {
+.hourly-forecast-temperature {
   text-align: center;
   color: rgb(135, 135, 135);
   font-size: 13px;
