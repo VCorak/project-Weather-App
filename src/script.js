@@ -1,14 +1,7 @@
 // date & time
 
-function newDate(date) {
-  let currentHour = date.getHours();
-  if (currentHour < 10) {
-    currentHour = `0${currentHour}`;
-  }
-  let currentMinutes = date.getMinutes();
-  if (currentMinutes < 10) {
-    currentMinutes = `0${currentMinutes}`;
-  }
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
 
   let daysInWeek = [
     "Sunday",
@@ -21,11 +14,8 @@ function newDate(date) {
   ];
   let currentDay = daysInWeek[date.getDay()];
 
-  return `${currentDay} ${currentHour}:${currentMinutes}`;
+  return `${currentDay} ${formatHours(timestamp)}`;
 }
-let dateElement = document.querySelector("#date");
-let currentTime = new Date();
-dateElement.innerHTML = newDate(currentTime);
 
 function formatHours(timestamp) {
   let date = new Date(timestamp);
@@ -38,7 +28,7 @@ function formatHours(timestamp) {
     currentMinutes = `0${currentMinutes}`;
   }
 
-  return `${hours}:${minutes}`;
+  return `${currentHour}:${currentMinutes}`;
 }
 
 // show current weather
@@ -46,6 +36,8 @@ function formatHours(timestamp) {
 function showCityWeather(response) {
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
+  let date = document.querySelector("#date");
+  date.innerHTML = formatDate(response.data.dt * 1000);
   let temperature = document.querySelector("#main-temperature");
   celsiusTemperature = response.data.main.temp;
   temperature.innerHTML = Math.round(response.data.main.temp);
@@ -84,8 +76,8 @@ function displayHourForecast(response) {
               />
               <div class="hourly-forecast-temperature">
                 <strong>${Math.round(
-                  forecast.main.temp.max
-                )}°</strong>${Math.round(forecast.main.temp.min)}°
+                  forecast.main.temp_max
+                )}°</strong> ${Math.round(forecast.main.temp_min)}°
               </div>
         </div>`;
   }
@@ -121,6 +113,8 @@ function instantLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showCityWeather);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayHourForecast);
 }
 
 function getCurrentLocation() {
@@ -152,5 +146,3 @@ function convertToCelsius(event) {
 let celsiusTemperature = null;
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
-
-search("Antwerp");

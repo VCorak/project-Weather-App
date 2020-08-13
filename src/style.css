@@ -95,7 +95,7 @@ li:first-letter {
   width: 48px;
 }
 
-.forecast-temperature {
+.hourly-forecast-temperature {
   text-align: center;
   color: rgb(135, 135, 135);
   font-size: 13px;
