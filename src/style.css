@@ -46,20 +46,20 @@ li:first-letter {
   margin-top: 20px;
 }
 
-.clearfix-weather-temperature img {
+.clearfix-weather-values img {
   margin-right: 5px;
   height: 64px;
   width: 64px;
 }
 
-.clearfix-weather-temperature strong {
+.clearfix-weather-values strong {
   color: rgb(33, 33, 33);
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
 }
 
-.clearfix-weather-temperature .symbols {
+.clearfix-weather-values .symbols {
   position: relative;
   font-size: 16px;
   top: -34px;
@@ -70,7 +70,7 @@ li:first-letter {
   cursor: default;
 }
 
-.weather-temperature .active:hover {
+.symbols .active:hover {
   text-decoration: none;
 }
 
