@@ -33,6 +33,7 @@ li:first-letter {
 .content-wrapper {
   max-width: 600px;
   margin: 30px auto;
+  
 }
 
 .current-weather-report {

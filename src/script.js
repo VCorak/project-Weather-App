@@ -114,12 +114,13 @@ function instantLocation(position) {
   let apiKey = "21d207d4e5449385a0586090096515c7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showCityWeather);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayHourForecast);
 }
 
 function getCurrentLocation() {
   navigator.geolocation.getCurrentPosition(instantLocation);
 }
-
 let button = document.querySelector("#update-button");
 button.addEventListener("click", getCurrentLocation);
 
