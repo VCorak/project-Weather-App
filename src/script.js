@@ -104,7 +104,9 @@ function search(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
-//update current location button
+enterCity("Antwerp");
+
+//update current location and forecast button
 
 function instantLocation(position) {
   let lat = position.coords.latitude;
@@ -120,10 +122,6 @@ function getCurrentLocation() {
 
 let button = document.querySelector("#update-button");
 button.addEventListener("click", getCurrentLocation);
-
-
-
-
 
 //celsius to fahrenheit
 
