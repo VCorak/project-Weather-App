@@ -30,8 +30,12 @@ li:first-letter {
   text-transform: capitalize;
 }
 
+.container {
+  min-height: 700px;
+  min-width: 500px;
+}
+
 .content-wrapper {
-  min-width: 300px;
   max-width: 600px;
   margin: 30px auto;
 }
